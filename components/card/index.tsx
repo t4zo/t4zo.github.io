@@ -18,7 +18,7 @@ export default function Card({ link, image, title, content }: Props) {
         <Image
           src={image}
           alt={`Imagem do ${title}`}
-          className='rounded-t-md md:rounded-none md:rounded-l-md lg:rounded-r-md'
+          className='rounded-t-md md:rounded-none md:rounded-l-md lg:rounded-none lg:rounded-r-md'
           // placeholder='blur'
           // width={350}
           // height={200}

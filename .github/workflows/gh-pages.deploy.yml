@@ -27,11 +27,8 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Build project
-        run: npm run build
-
-      - name: Export static files
-        run: npm run export
+      - name: Build project and Export static files
+        run: npm run build && npm run export
 
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
