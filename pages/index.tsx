@@ -1,18 +1,18 @@
 import { useContext } from 'react';
-import ThemeContext from '../contexts/themeContext';
-
 import Link from 'next/link';
 
-import Switch from '../components/switch';
-import Card from '../components/card';
-import Footer from '../components/footer';
+import ThemeContext from 'contexts/themeContext';
 
-import sacaImage from '../public/assets/images/saca.jpg';
-import saedImage from '../public/assets/images/saed.jpg';
-import netflixImage from '../public/assets/images/netflix.jpg';
-import pgpImage from '../public/assets/images/pgp.png';
-import osFederaImage from '../public/assets/images/osfederas.png';
-import covid19Image from '../public/assets/images/covid19.jpg';
+import Switch from 'components/switch';
+import Card from 'components/card';
+import Footer from 'components/footer';
+
+import sacaImage from 'public/assets/images/saca.jpg';
+import saedImage from 'public/assets/images/saed.jpg';
+import netflixImage from 'public/assets/images/netflix.jpg';
+import pgpImage from 'public/assets/images/pgp.png';
+import osFederaImage from 'public/assets/images/osfederas.png';
+import covid19Image from 'public/assets/images/covid19.jpg';
 
 export default function HomePage() {
   const { darkTheme, toggleTheme } = useContext(ThemeContext);

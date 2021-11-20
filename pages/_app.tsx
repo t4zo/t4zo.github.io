@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 
-import { ThemeContextProvider } from '../contexts/themeContext';
+import { ThemeContextProvider } from 'contexts/themeContext';
 
-import 'tailwindcss/tailwind.css';
-import '../global.css';
+import 'global.css';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   if (typeof window !== 'undefined') {
