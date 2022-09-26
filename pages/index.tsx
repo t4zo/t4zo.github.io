@@ -34,7 +34,7 @@ export default function HomePage() {
           <Card link='https://play.google.com/store/apps/details?id=xyz.saca' image={sacaImage} title='SACA' content='Aplicativo móvel voltado para ajudar crianças com problemas de comunicação' />
           <Card link='https://saed.t4zo.com' image={saedImage} title='SAED' content='Sistema de avaliação de desempenho escolar através da resolução de questões elobaradas pelos professores' />
           <Card link='https://pgpjuazeiroba.com.br' image={pgpImage} title='PGP' content='Programa de Governo Participativo, um portal feito em 2020 para o então candidato a prefeito de Juazeiro, Paulo Bomfim no período eleitoral' />
-          <Card link='https://netflix-9zvv4lgoy-tacio.vercel.app' image={netflixImage} title='Netflix' content='Projeto pessoal realizando um clone com a possibilidade de criação de contas e atualização periódica do catálogo de Séries e Filmes' />
+          <Card link='https://netflix-blush.vercel.app' image={netflixImage} title='Netflix' content='Projeto pessoal realizando um clone com a possibilidade de criação de contas e atualização periódica do catálogo de Séries e Filmes' />
           <Card link='https://covid19-tracker-azure.vercel.app' image={covid19Image} title='Covid19' content='Sistema para rastreamento de casos e mortes confirmadas da Covid19 por país ou globalmente' />
           <Card link='https://osfedera.netlify.app' image={osFederaImage} title='Os Federa' content='Projeto para o professor, afim de atualizar seu site pessoal' />
         </div>
