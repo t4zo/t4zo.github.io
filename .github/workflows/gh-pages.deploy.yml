@@ -1,8 +1,15 @@
 name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
+
   push:
-    branches: [main]
+    branches: 
+      - main
+
+  pull_request:
+    branches: 
+      - main
 
 jobs:
   build:
@@ -16,25 +23,69 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - name: Get files
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
+          
+      - uses: actions/cache@v3
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install packages
         run: npm ci
 
-      - name: Build project and Export static files
-        run: npm run build && npm run export
+      # - name: Build project and Export static files
+      #   run: npm run build && npm run export
+
+      - name: Build project
+        run: npm run build
+
+      - name: Export static files
+        run: npm run export
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: out
+
+      # - name: Add .nojekyll file
+      #   run: touch ./out/.nojekyll
+
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@4
+      #   with:
+      #     branch: gh-pages
+      #     folder: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifact
 
       - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
+        run: touch ./.nojekyll
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: out
+          folder: .
