@@ -20,19 +20,16 @@
 module.exports = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
+  images: {
+    unoptimized: true
+  },
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
     return {
       '/': { page: '/' },
       '/contact': { page: '/contact' },
       '/suggestions': { page: '/suggestions' },
       // '/p/hello-nextjs': { page: '/post', query: { title: 'hello-nextjs' } },
-      // '/p/learn-nextjs': { page: '/post', query: { title: 'learn-nextjs' } },
-      // '/p/deploy-nextjs': { page: '/post', query: { title: 'deploy-nextjs' } },
     }
-  },
-  images: {
-    loader: "imgix",
-    path: "",
   },
 }
 
