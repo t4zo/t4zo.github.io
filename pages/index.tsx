@@ -24,16 +24,16 @@ const cards = [
     image: sacaImage,
   },
   {
-    title: 'Egesplan',
-    content: 'Sistema para gestão e coordenação de dados de prefeituras',
-    link: 'https://egesplan.vercel.app',
-    image: egesplanImage,
-  },
-  {
     title: 'Artmed 360',
     content: 'E-Commerce voltado para venda de conteúdo para a área da saúde',
     link: 'https://www.artmed360.com.br',
     image: artmed360Image,
+  },
+  {
+    title: 'Egesplan',
+    content: 'Sistema para gestão e coordenação de dados de prefeituras',
+    link: 'https://egesplan.vercel.app',
+    image: egesplanImage,
   },
   {
     title: 'SAED',
@@ -76,7 +76,7 @@ export default function HomePage() {
         <Switch condition={darkTheme} changeCondition={toggleTheme} offIcon={'&#x2600;&#xFE0F;'} onIcon={'&#127769;'} />
         <h1 className='text-center m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight'>
           <span className='hover:text-primary-600 hover:cursor-pointer dark:text-gray-200 dark:hover:text-primary-600'>
-            <span className='text-primary-600'>T</span>ácio de <span className='text-primary-600'>S</span>ouza <span className='text-primary-600'>C</span>ampos.
+            <span className='text-primary-600'>T</span>ácio de <span className='text-primary-600'>S</span>ouza <span className='text-primary-600'>C</span>ampos
           </span>
           <span> | </span>
           <span className='text-primary-600 no-underline hover:underline hover:cursor-pointer focus:underline' onClick={handleContact}>
