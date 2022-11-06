@@ -24,16 +24,16 @@ const cards = [
     image: sacaImage,
   },
   {
-    title: 'Egesplan',
-    content: 'Sistema para gestão e coordenação de dados de prefeituras',
-    link: 'https://egesplan.vercel.app',
-    image: egesplanImage,
-  },
-  {
     title: 'Artmed 360',
     content: 'E-Commerce voltado para venda de conteúdo para a área da saúde',
     link: 'https://www.artmed360.com.br',
     image: artmed360Image,
+  },
+  {
+    title: 'Egesplan',
+    content: 'Sistema para gestão e coordenação de dados de prefeituras',
+    link: 'https://egesplan.vercel.app',
+    image: egesplanImage,
   },
   {
     title: 'SAED',

@@ -70,7 +70,7 @@ jobs:
 
       - name: Deploy app to S3 bucket
         continue-on-error: true
-        run: aws s3 sync ./out s3://t4zo.com --delete
+        run: aws s3 sync ./out ${{ secrets.AWS_BUCKET }} --delete
 
   # deploy:
   #   needs: build
@@ -93,7 +93,7 @@ jobs:
   #         aws-region: ${{ secrets.AWS_REGION }}
 
   #     - name: Deploy app to S3 bucket
-  #       run: aws s3 sync . s3://t4zo.com --delete
+  #       run: aws s3 sync . ${{ secrets.AWS_BUCKET }} --delete
 
   invalidate-cache:
     needs: build
