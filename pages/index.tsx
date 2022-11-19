@@ -42,16 +42,16 @@ const cards = [
     image: saedImage,
   },
   {
-    title: 'PGP',
-    content: 'Programa de Governo Participativo, um portal feito em 2020 para o então candidato a prefeito de Juazeiro, Paulo Bomfim no período eleitoral',
-    link: 'https://pgpjuazeiroba.com.br',
-    image: pgpImage,
-  },
-  {
     title: 'Netflix',
     content: 'Projeto pessoal realizando um clone com a possibilidade de criação de contas e atualização periódica do catálogo de Séries e Filmes',
     link: 'https://netflix-blush.vercel.app',
     image: netflixImage,
+  },
+  {
+    title: 'PGP',
+    content: 'Programa de Governo Participativo, um portal feito em 2020 para o então candidato a prefeito de Juazeiro, Paulo Bomfim no período eleitoral',
+    link: 'https://pgpjuazeiroba.netlify.app',
+    image: pgpImage,
   },
   {
     title: 'Covid19',
