@@ -18,7 +18,7 @@ export default function ContactPage() {
       {tooltip.visible && <Tooltip message={tooltip.message} />}
       <main className='h-screen flex justify-center items-center flex-col bg-gray-50 dark:bg-[#191919] text-black dark:text-gray-300'>
         <Switch condition={darkTheme} changeCondition={toggleTheme} offIcon={'&#x2600;&#xFE0F;'} onIcon={'&#127769;'} />
-        <div className='px-16 py-12 w-1/3'>
+        <div className=' px-6 md:px-16 py-12 w-full lg:w-2/3 xl:w-1/3'>
           <h1 className='mt-6 text-center text-3xl font-bold tracking-tight text-black dark:text-gray-100 mb-10'>Entre em Contato!</h1>
           <form method='post' onSubmit={sendMail}>
             <div>
@@ -83,10 +83,10 @@ export default function ContactPage() {
             <div className='flex'>
               <Link
                 href='/'
-                className='group relative flex py-2 pl-4 pr-8  text-sm font-medium justify-center rounded-l-md bg-gray-200 hover:bg-gray-300 :text-primary focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'>
+                className='group relative flex py-2 pl-4 pr-8  text-sm font-medium justify-center rounded-l-md bg-gray-50 border border-transparent hover:border hover:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'>
                 <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
                   <svg
-                    className='w-6 h-6 text-primary-300 group-hover:text-primary-500'
+                    className='w-6 h-6 text-primary-500 group-hover:text-primary-700'
                     fill='currentColor'
                     aria-hidden='true'
                     viewBox='0 0 24 24'
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 Enviar
                 <span className='absolute inset-y-0 right-0 flex items-center pr-3'>
                   <svg
-                    className='w-6 h-6 text-gray-300 group-hover:text-white'
+                    className='w-6 h-6 text-gray-100 group-hover:text-white'
                     fill='currentColor'
                     aria-hidden='true'
                     viewBox='0 0 24 24'
