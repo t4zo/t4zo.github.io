@@ -4,10 +4,11 @@ import { AppProps } from 'next/app';
 import { ThemeContextProvider } from 'contexts/themeContext';
 
 import 'global.css';
+import { TooltipContextProvider } from 'contexts/tooltipContext';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   if (typeof window !== 'undefined') {
-    if (localStorage.theme === 'dark'/*|| (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)*/) {
+    if (localStorage.theme === 'dark' /*|| (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)*/) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
@@ -16,13 +17,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeContextProvider>
-      <Head>
-        <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='description' content='Netflix clone website' />
-        <title>Tácio de Souza Campos</title>
-      </Head>
-      <Component {...pageProps} />
+      <TooltipContextProvider>
+        <Head>
+          <meta charSet='utf-8' />
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <meta name='description' content='Netflix clone website' />
+          <title>Tácio de Souza Campos</title>
+        </Head>
+        <Component {...pageProps} />
+      </TooltipContextProvider>
     </ThemeContextProvider>
   );
 }

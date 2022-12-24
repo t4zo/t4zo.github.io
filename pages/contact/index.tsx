@@ -2,12 +2,13 @@ import { useContext, useRef, useState } from 'react';
 import axios from 'axios';
 import Switch from 'components/switch';
 import ThemeContext from 'contexts/themeContext';
+import TooltipContext from 'contexts/tooltipContext';
 import Link from 'next/link';
 import Tooltip from 'components/tooltip';
 
 export default function ContactPage() {
   const { darkTheme, toggleTheme } = useContext(ThemeContext);
-  const [tooltip, setTooltip] = useState({ visible: false, message: '' });
+  const { tooltip, openTooltip, closeTooltip } = useContext(TooltipContext);
 
   const nameRef = useRef<HTMLInputElement>();
   const emailRef = useRef<HTMLInputElement>();
@@ -15,7 +16,6 @@ export default function ContactPage() {
 
   return (
     <>
-      {tooltip.visible && <Tooltip message={tooltip.message} />}
       <main className='h-screen flex justify-center items-center flex-col bg-gray-50 dark:bg-[#191919] text-black dark:text-gray-300'>
         <Switch condition={darkTheme} changeCondition={toggleTheme} offIcon={'&#x2600;&#xFE0F;'} onIcon={'&#127769;'} />
         <div className=' px-6 md:px-16 py-12 w-full lg:w-2/3 xl:w-1/3'>
@@ -113,6 +113,8 @@ export default function ContactPage() {
             </div>
           </form>
         </div>
+        
+        <Tooltip message={tooltip.message} />
       </main>
     </>
   );
@@ -121,18 +123,18 @@ export default function ContactPage() {
     e.preventDefault();
 
     try {
-      await axios.post('https://on3xxithejy362fi3nennx7mz40nbouv.lambda-url.us-east-1.on.aws', {
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        message: messageRef.current.value,
-      });
+      // await axios.post('https://on3xxithejy362fi3nennx7mz40nbouv.lambda-url.us-east-1.on.aws', {
+      //   name: nameRef.current.value,
+      //   email: emailRef.current.value,
+      //   message: messageRef.current.value,
+      // });
 
-      setTooltip({ visible: true, message: 'Mensagem enviada com sucesso!' });
+      openTooltip('Mensagem enviada com sucesso!', 5000);
     } catch (e) {
-      setTooltip({ visible: true, message: 'Ops, ocorreu um erro, por favor, tente novamente!' });
+      openTooltip('Ops, ocorreu um erro, por favor, tente novamente!', 5000);
     } finally {
       setTimeout(() => {
-        setTooltip(prevState => ({ ...prevState, visible: false }));
+        closeTooltip();
       }, 5000);
     }
   }
