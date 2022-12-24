@@ -123,13 +123,17 @@ export default function ContactPage() {
     e.preventDefault();
 
     try {
-      // await axios.post('https://on3xxithejy362fi3nennx7mz40nbouv.lambda-url.us-east-1.on.aws', {
-      //   name: nameRef.current.value,
-      //   email: emailRef.current.value,
-      //   message: messageRef.current.value,
-      // });
+      await axios.post('https://on3xxithejy362fi3nennx7mz40nbouv.lambda-url.us-east-1.on.aws', {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        message: messageRef.current.value,
+      });
 
       openTooltip('Mensagem enviada com sucesso!', 5000);
+
+      nameRef.current.value = ''
+      emailRef.current.value = ''
+      messageRef.current.value = ''
     } catch (e) {
       openTooltip('Ops, ocorreu um erro, por favor, tente novamente!', 5000);
     } finally {
