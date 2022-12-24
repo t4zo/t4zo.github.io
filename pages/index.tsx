@@ -79,12 +79,12 @@ export default function HomePage() {
             <span className='text-primary-600'>T</span>ácio de <span className='text-primary-600'>S</span>ouza <span className='text-primary-600'>C</span>ampos
           </span>
           <span> | </span>
-          <span className='text-primary-600 no-underline hover:underline hover:cursor-pointer focus:underline' onClick={handleContact}>
+          {/* <span className='text-primary-600 no-underline hover:underline hover:cursor-pointer focus:underline' onClick={handleContact}>
               Contato
-          </span>
-          {/* <Link href='/contact' className='text-primary-600 no-underline hover:underline focus:underline'>
+          </span> */}
+          <Link href='/contact' className='text-primary-600 no-underline hover:underline focus:underline'>
             Contato
-          </Link> */}
+          </Link>
         </h1>
         <div className='grid gap-5 grid-cols-1 lg:grid-cols-2 w-full mt-12 lg:max-w-6xl'>
           {cards.slice(0, 6).map((card, index) => (
@@ -96,7 +96,7 @@ export default function HomePage() {
     </div>
   );
 
-  function handleContact() {
-    window.open('mailto:taciodesouzacampos@gmail.com?subject=Entrando em contato | t4zo');
-  }
+  // function handleContact() {
+  //   window.open('mailto:taciodesouzacampos@gmail.com?subject=Entrando em contato | t4zo');
+  // }
 }
