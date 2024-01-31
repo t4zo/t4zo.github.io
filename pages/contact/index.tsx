@@ -120,7 +120,7 @@ export default function ContactPage() {
     setMessage(e.message);
 
     try {
-      await axios.post('https://on3xxithejy362fi3nennx7mz40nbouv.lambda-url.us-east-1.on.aws', {
+      await axios.post(process.env.NEXT_PUBLIC_BASE_PATH, {
         name: e.name,
         email: e.email,
         message: e.message,
