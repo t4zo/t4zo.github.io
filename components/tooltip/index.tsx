@@ -1,7 +1,7 @@
 import TooltipContext from 'contexts/tooltipContext';
 import { useContext } from 'react';
 
-interface Props {
+type Props = {
   message?: string;
   learnMore?: string;
 }

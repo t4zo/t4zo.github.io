@@ -1,15 +1,15 @@
 import { createContext, ReactNode, useState } from 'react';
 
-interface Props {
+type Props = {
   children: ReactNode;
 }
 
-interface ITooltip {
+type ITooltip = {
   visible: boolean;
   message: string;
 }
 
-interface ITooltipContext {
+type ITooltipContext = {
   tooltip: ITooltip;
   openTooltip: (message: string, seconds: number) => void;
   closeTooltip: () => void;
