@@ -1,20 +1,20 @@
-import { useContext } from "react";
 import Link from 'next/link';
+import { useContext } from "react";
 
 import ThemeContext from 'contexts/themeContext';
 
-import Switch from 'components/switch';
 import Card from 'components/card';
 import Footer from 'components/footer';
+import Switch from 'components/switch';
 
+import artmed360Image from 'public/assets/images/artmed360.png';
+import covid19Image from 'public/assets/images/covid19.jpg';
+import egesplanImage from 'public/assets/images/egesplan.png';
+import netflixImage from 'public/assets/images/netflix.jpg';
+import osFederaImage from 'public/assets/images/osfederas.png';
+import pgpImage from 'public/assets/images/pgp.png';
 import sacaImage from 'public/assets/images/saca.jpg';
 import saedImage from 'public/assets/images/saed.jpg';
-import netflixImage from 'public/assets/images/netflix.jpg';
-import pgpImage from 'public/assets/images/pgp.png';
-import egesplanImage from 'public/assets/images/egesplan.png';
-import artmed360Image from 'public/assets/images/artmed360.png';
-import osFederaImage from 'public/assets/images/osfederas.png';
-import covid19Image from 'public/assets/images/covid19.jpg';
 
 const cards = [
   {
@@ -79,11 +79,8 @@ export default function HomePage() {
             <span className='text-primary-600'>T</span>ácio de <span className='text-primary-600'>S</span>ouza <span className='text-primary-600'>C</span>ampos
           </span>
           <span> | </span>
-          {/* <span className='text-primary-600 no-underline hover:underline hover:cursor-pointer focus:underline' onClick={handleContact}>
-              Contato
-          </span> */}
           <Link href='/contact' className='text-primary-600 no-underline hover:underline focus:underline'>
-            Contato
+            Contato.
           </Link>
         </h1>
         <div className='grid gap-5 grid-cols-1 lg:grid-cols-2 w-full mt-12 lg:max-w-6xl'>
@@ -95,8 +92,4 @@ export default function HomePage() {
       <Footer />
     </div>
   );
-
-  // function handleContact() {
-  //   window.open('mailto:taciodesouzacampos@gmail.com?subject=Entrando em contato | t4zo');
-  // }
 }
