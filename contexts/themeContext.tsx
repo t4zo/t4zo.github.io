@@ -1,10 +1,10 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
 
-interface Props {
+type Props = {
   children: ReactNode;
 }
 
-interface IThemeContext {
+type IThemeContext = {
   darkTheme: boolean;
   toggleTheme: () => void;
 }

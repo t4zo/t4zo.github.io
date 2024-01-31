@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import styles from './index.module.scss';
 
-interface Props {
+type Props = {
   key: React.Key;
   link: string;
   image: StaticImageData;
