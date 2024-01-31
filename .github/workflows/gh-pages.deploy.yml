@@ -14,9 +14,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    # env:
-    #   NEXT_PUBLIC_BASE_PATH: /
+    if: github.ref == 'refs/heads/main'
 
     strategy:
       matrix:
@@ -46,9 +44,6 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      # - name: Build project and Export static files
-      #   run: npm run build && npm run export
-
       - name: Build project
         run: npm run build
 
@@ -60,19 +55,9 @@ jobs:
           name: artifact
           path: out
 
-      # - name: Add .nojekyll file
-      #   run: touch ./out/.nojekyll
-
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@4
-      #   with:
-      #     branch: gh-pages
-      #     folder: out
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    # if: github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v3
