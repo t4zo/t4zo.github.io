@@ -80,7 +80,7 @@ export default function HomePage() {
           </span>
           <span> | </span>
           <Link href='/contact' className='text-primary-600 no-underline hover:underline focus:underline'>
-            Contato.
+            Contato
           </Link>
         </h1>
         <div className='grid gap-5 grid-cols-1 lg:grid-cols-2 w-full mt-12 lg:max-w-6xl'>
