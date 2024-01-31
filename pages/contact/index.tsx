@@ -35,11 +35,11 @@ export default function ContactPage() {
                   type='name'
                   {...register('name')}
                   required
-                  className={`relative block w-full appearance-none rounded-none ${!hasNameError && 'rounded-t-md'} border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500 sm:text-sm`}
+                  className={`relative block w-full appearance-none rounded-none ${hasNameError ? 'rounded-md' : 'rounded-t-md'} border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500 sm:text-sm`}
                   placeholder='Nome'
                 />
               </div>
-              {errors.name?.message && <p className='text-red-500 mb-4'>{errors.name?.message}</p>}
+              {errors.name?.message && <p className='text-red-600 mb-4'>{errors.name?.message}</p>}
               <div>
                 <label htmlFor='email' className='sr-only'>
                   Email
@@ -50,14 +50,14 @@ export default function ContactPage() {
                   type='email'
                   {...register('email')}
                   required
-                  className={`relative block w-full appearance-none rounded-none ${!hasNameError && 'border-t-0 rounded-b-md'} focus:border-t border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500 sm:text-sm`}
+                  className={`relative block w-full appearance-none rounded-none ${hasNameError ? 'rounded-b' : 'border-t-0 rounded-b-md'} focus:border-t border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500 sm:text-sm`}
                   placeholder='Email'
                 />
               </div>
-              {errors.email?.message && <p className='text-red-500'>{errors.email?.message}</p>}
+              {errors.email?.message && <p className='text-red-600'>{errors.email?.message}</p>}
             </div>
 
-            <div className='mt-6'>
+            <div className={`${hasNameError ? 'mt-4' : 'mt-8'}`}>
               <label htmlFor='message' className='sr-only'>
                 Mensagem
               </label>
@@ -71,9 +71,9 @@ export default function ContactPage() {
                 placeholder='Mensagem'
               />
             </div>
-            {errors.message?.message && <p className='text-red-500 mb-8'>{errors.message?.message}</p>}
+            {errors.message?.message && <p className='text-red-600 mb-8'>{errors.message?.message}</p>}
 
-            <div className='flex mt-8F'>
+            <div className='flex mt-8'>
               <Link
                 href='/'
                 className='group relative flex py-2 pl-4 pr-8  text-sm font-medium justify-center rounded-l-md bg-gray-50 border hover:border hover:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'>
@@ -92,16 +92,6 @@ export default function ContactPage() {
                 type='submit'
                 className='group relative flex w-full justify-center rounded-r-md bg-primary-600 py-2 px-4 text-sm font-medium text-gray-100 hover:text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'>
                 Enviar
-                <span className='absolute inset-y-0 right-0 flex items-center pr-3'>
-                  <svg
-                    className='w-6 h-6 text-gray-100 group-hover:text-white'
-                    fill='currentColor'
-                    aria-hidden='true'
-                    viewBox='0 0 24 24'
-                    xmlns='http://www.w3.org/2000/svg'>
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M9 5l7 7-7 7'></path>
-                  </svg>
-                </span>
               </button>
             </div>
           </form>
