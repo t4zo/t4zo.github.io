@@ -42,7 +42,7 @@ export default function ContactPage() {
               {errors.name?.message && <p className='text-red-600 mb-4'>{errors.name?.message}</p>}
               <div>
                 <label htmlFor='email' className='sr-only'>
-                  Email
+                  E-mail
                 </label>
                 <input
                   id='email'
