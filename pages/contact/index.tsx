@@ -3,7 +3,7 @@ import axios from 'axios';
 import Switch from 'components/switch';
 import Tooltip from 'components/tooltip';
 import TooltipContext from 'contexts/tooltipContext';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { contactSchema } from 'schemas/contact.schema';
@@ -14,6 +14,7 @@ export default function ContactPage() {
   const { setContact } = useContactStore()
   const { register, handleSubmit, formState: { errors }, reset } = useForm({ resolver: zodResolver(contactSchema) });
   const { tooltip, openTooltip, closeTooltip } = useContext(TooltipContext);
+  const router = useRouter()
 
   const hasNameError = errors.name?.message
 
@@ -97,9 +98,9 @@ export default function ContactPage() {
             {errors.message?.message && <p className='text-red-600 mb-8'>{errors.message?.message}</p>}
 
             <div className='flex mt-8'>
-              <Link
-                href='/'
-                className='group relative flex py-2 pl-4 pr-8  text-sm font-medium justify-center rounded-l-md bg-gray-50 border hover:border hover:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'>
+              <div
+                onClick={() => router.back()}
+                className='cursor-pointer group relative flex py-2 pl-4 pr-8  text-sm font-medium justify-center rounded-l-md bg-gray-50 border hover:border hover:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'>
                 <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
                   <svg
                     className='w-6 h-6 text-primary-500 group-hover:text-primary-700'
@@ -110,7 +111,7 @@ export default function ContactPage() {
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M15 19l-7-7 7-7'></path>
                   </svg>
                 </span>
-              </Link>
+              </div>
               <button
                 type='submit'
                 className='group relative flex w-full justify-center rounded-r-md bg-primary-600 py-2 px-4 text-sm font-medium text-gray-100 hover:text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2'>
