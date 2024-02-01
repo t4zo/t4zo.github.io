@@ -1,10 +1,10 @@
-import Head from 'next/head';
 import { AppProps } from 'next/app';
+import Head from 'next/head';
 
 import { ThemeContextProvider } from 'contexts/themeContext';
+import { TooltipContextProvider } from 'contexts/tooltipContext';
 
 import 'global.css';
-import { TooltipContextProvider } from 'contexts/tooltipContext';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   if (typeof window !== 'undefined') {

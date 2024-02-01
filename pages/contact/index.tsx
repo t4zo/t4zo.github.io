@@ -8,14 +8,37 @@ import { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { contactSchema } from 'schemas/contact.schema';
 import { useContactStore } from 'stores/contact.store';
+import { Contact } from 'types/contact.type';
 
 export default function ContactPage() {
-  const { setName, setEmail, setMessage, setContact } = useContactStore()
+  const { setContact } = useContactStore()
   const { register, handleSubmit, formState: { errors }, reset } = useForm({ resolver: zodResolver(contactSchema) });
-
   const { tooltip, openTooltip, closeTooltip } = useContext(TooltipContext);
 
   const hasNameError = errors.name?.message
+
+  async function sendMail(contact: Contact) {
+    const { name, email, message } = contact
+    setContact({ name, email, message });
+
+    try {
+      await axios.post('https://on3xxithejy362fi3nennx7mz40nbouv.lambda-url.us-east-1.on.aws', {
+        name,
+        email,
+        message,
+      });
+
+      reset();
+      openTooltip('Mensagem enviada com sucesso!', 5000);
+    } catch (e) {
+      console.error(e)
+      openTooltip('Ops, ocorreu um erro, por favor, tente novamente!', 5000);
+    } finally {
+      setTimeout(() => {
+        closeTooltip();
+      }, 5000);
+    }
+  }
 
   return (
     <>
@@ -101,29 +124,4 @@ export default function ContactPage() {
       </main>
     </>
   );
-
-  async function sendMail(e: any) {
-    setContact({ name: e.name, email: e.email, message: e.message });
-    setName(e.name);
-    setEmail(e.email);
-    setMessage(e.message);
-
-    try {
-      await axios.post('https://on3xxithejy362fi3nennx7mz40nbouv.lambda-url.us-east-1.on.aws', {
-        name: e.name,
-        email: e.email,
-        message: e.message,
-      });
-
-      reset();
-      openTooltip('Mensagem enviada com sucesso!', 5000);
-    } catch (e) {
-      console.error(e)
-      openTooltip('Ops, ocorreu um erro, por favor, tente novamente!', 5000);
-    } finally {
-      setTimeout(() => {
-        closeTooltip();
-      }, 5000);
-    }
-  }
 }
