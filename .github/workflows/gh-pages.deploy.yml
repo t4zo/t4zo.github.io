@@ -47,8 +47,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Export static files
-        run: npm run export
+      # - name: Export static files
+      #   run: npm run export
 
       - uses: actions/upload-artifact@v3
         with:

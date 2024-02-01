@@ -42,7 +42,7 @@ export default function ContactPage() {
               {errors.name?.message && <p className='text-red-600 mb-4'>{errors.name?.message}</p>}
               <div>
                 <label htmlFor='email' className='sr-only'>
-                  Email
+                  E-mail
                 </label>
                 <input
                   id='email'
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   {...register('email')}
                   required
                   className={`relative block w-full appearance-none rounded-none ${hasNameError ? 'rounded-b' : 'border-t-0 rounded-b-md'} focus:border-t border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500 sm:text-sm`}
-                  placeholder='Email'
+                  placeholder='E-mail'
                 />
               </div>
               {errors.email?.message && <p className='text-red-600'>{errors.email?.message}</p>}
