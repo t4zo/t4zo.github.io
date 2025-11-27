@@ -15,10 +15,18 @@ const ThemeContext = createContext<IThemeContext>({
 });
 
 export function ThemeContextProvider({ children }: Props) {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(true);
 
   useEffect(() => {
-    setDarkTheme(localStorage.getItem('theme') === 'dark');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setDarkTheme(savedTheme === 'dark');
+    } else {
+      // Define dark mode como padrão
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setDarkTheme(true);
+    }
   }, []);
 
   function toggleTheme() {

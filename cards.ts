@@ -1,10 +1,10 @@
 import { Card } from 'types/card.type';
 
 import artmed360Image from 'public/assets/images/artmed360.png';
-import covid19Image from 'public/assets/images/covid19.jpg';
-import egesplanImage from 'public/assets/images/egesplan.png';
-import netflixImage from 'public/assets/images/netflix.jpg';
-import osFederaImage from 'public/assets/images/osfederas.png';
+// import covid19Image from 'public/assets/images/covid19.jpg';
+// import egesplanImage from 'public/assets/images/egesplan.png';
+// import netflixImage from 'public/assets/images/netflix.jpg';
+// import osFederaImage from 'public/assets/images/osfederas.png';
 import pgpImage from 'public/assets/images/pgp.png';
 import sacaImage from 'public/assets/images/saca.jpg';
 import saedImage from 'public/assets/images/saed.jpg';
@@ -22,42 +22,42 @@ const cards: Card[] = [
     link: 'https://www.artmed360.com.br',
     image: artmed360Image,
   },
-  {
-    title: 'Egesplan',
-    content: 'Sistema para gestão e coordenação de dados de prefeituras',
-    link: 'https://egesplan.vercel.app',
-    image: egesplanImage,
-  },
+  // {
+  //   title: 'Egesplan',
+  //   content: 'Sistema para gestão e coordenação de dados de prefeituras',
+  //   link: 'https://egesplan.vercel.app',
+  //   image: egesplanImage,
+  // },
   {
     title: 'SAED',
     content: 'Sistema de avaliação de desempenho escolar através da resolução de questões elobaradas pelos professores',
-    link: 'https://saed.t4zo.com',
+    link: 'https://saed.taciosc.com',
     image: saedImage,
   },
-  {
-    title: 'Netflix',
-    content: 'Projeto pessoal realizando um clone com a possibilidade de criação de contas e atualização periódica do catálogo de Séries e Filmes',
-    link: 'https://netflix-blush.vercel.app',
-    image: netflixImage,
-  },
+  // {
+  //   title: 'Netflix',
+  //   content: 'Projeto pessoal realizando um clone com a possibilidade de criação de contas e atualização periódica do catálogo de Séries e Filmes',
+  //   link: 'https://netflix-blush.vercel.app',
+  //   image: netflixImage,
+  // },
   {
     title: 'PGP',
     content: 'Programa de Governo Participativo, um portal feito em 2020 para o então candidato a prefeito de Juazeiro, Paulo Bomfim no período eleitoral',
     link: 'https://pgpjuazeiroba.netlify.app',
     image: pgpImage,
   },
-  {
-    title: 'Covid19',
-    content: 'Sistema para rastreamento de casos e mortes confirmadas da Covid19 por país ou globalmente',
-    link: 'https://covid19-tracker-azure.vercel.app',
-    image: covid19Image,
-  },
-  {
-    title: 'Os Federa',
-    content: 'Projeto para o professor, afim de atualizar seu site pessoal',
-    link: 'https://osfedera.netlify.app',
-    image: osFederaImage,
-  },
+  // {
+  //   title: 'Covid19',
+  //   content: 'Sistema para rastreamento de casos e mortes confirmadas da Covid19 por país ou globalmente',
+  //   link: 'https://covid19-tracker-azure.vercel.app',
+  //   image: covid19Image,
+  // },
+  // {
+  //   title: 'Os Federa',
+  //   content: 'Projeto para o professor, afim de atualizar seu site pessoal',
+  //   link: 'https://osfedera.netlify.app',
+  //   image: osFederaImage,
+  // },
 ];
 
 export default cards;
