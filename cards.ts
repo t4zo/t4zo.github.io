@@ -5,9 +5,10 @@ import artmed360Image from 'public/assets/images/artmed360.png';
 // import egesplanImage from 'public/assets/images/egesplan.png';
 // import netflixImage from 'public/assets/images/netflix.jpg';
 // import osFederaImage from 'public/assets/images/osfederas.png';
-import pgpImage from 'public/assets/images/pgp.png';
+// import pgpImage from 'public/assets/images/pgp.png';
 import sacaImage from 'public/assets/images/saca.jpg';
 import saedImage from 'public/assets/images/saed.jpg';
+import trustlyImage from 'public/assets/images/trustly.png';
 
 const cards: Card[] = [
   {
@@ -15,6 +16,12 @@ const cards: Card[] = [
     content: 'Aplicativo móvel voltado para ajudar crianças com problemas de comunicação',
     link: 'https://play.google.com/store/apps/details?id=xyz.saca',
     image: sacaImage,
+  },
+  {
+    title: 'Trustly',
+    content: 'Método de pagamentos/transações simplificadas para o mercado americano e europeu.',
+    link: 'https://www.trustly.com',
+    image: trustlyImage,
   },
   {
     title: 'Artmed 360',
@@ -40,12 +47,12 @@ const cards: Card[] = [
   //   link: 'https://netflix-blush.vercel.app',
   //   image: netflixImage,
   // },
-  {
-    title: 'PGP',
-    content: 'Programa de Governo Participativo, um portal feito em 2020 para o então candidato a prefeito de Juazeiro, Paulo Bomfim no período eleitoral',
-    link: 'https://pgpjuazeiroba.netlify.app',
-    image: pgpImage,
-  },
+  // {
+  //   title: 'PGP',
+  //   content: 'Programa de Governo Participativo, um portal feito em 2020 para o então candidato a prefeito de Juazeiro, Paulo Bomfim no período eleitoral',
+  //   link: 'https://pgpjuazeiroba.netlify.app',
+  //   image: pgpImage,
+  // },
   // {
   //   title: 'Covid19',
   //   content: 'Sistema para rastreamento de casos e mortes confirmadas da Covid19 por país ou globalmente',
